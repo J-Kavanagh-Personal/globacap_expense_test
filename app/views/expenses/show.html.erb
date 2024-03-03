@@ -1,0 +1,12 @@
+<% require_relative '../../components/expense/expense_component' %>
+
+<p style="color: green"><%= notice %></p>
+
+<%= render ExpenseComponent.new(id: @expense.id, amount: @expense.amount_in_pennies) %>
+
+<div>
+  <%= link_to "Edit this expense", edit_user_expense_path(params[:user_id], @expense) %> |
+  <%= link_to "Back to expenses", user_expenses_path %>
+
+  <%= button_to "Destroy this expense", user_expense_path(params[:user_id], @expense), method: :delete %>
+</div>
